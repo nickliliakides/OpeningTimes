@@ -1,11 +1,12 @@
 import { ChangeEvent, FC } from 'react';
+import dayjs from 'dayjs';
 import { FormControlLabel, Grid2 } from '@mui/material';
 import Checkbox from '@mui/material/Checkbox';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { TimePicker } from '@mui/x-date-pickers/TimePicker';
+
 import { DaySlotType } from '../types';
-import dayjs from 'dayjs';
 
 const DaySlot: FC<DaySlotType> = ({ day, setOpeningHoursState }) => {
   const handleCheckBoxChange = (e: ChangeEvent<HTMLInputElement>) =>
@@ -57,6 +58,7 @@ const DaySlot: FC<DaySlotType> = ({ day, setOpeningHoursState }) => {
           <>
             <Grid2 size={{ xs: 12, sm: 6, md: 4 }}>
               <TimePicker
+                sx={{ width: 1 }}
                 onChange={(value) =>
                   setOpeningHoursState((currentState) => ({
                     ...currentState,
@@ -73,6 +75,7 @@ const DaySlot: FC<DaySlotType> = ({ day, setOpeningHoursState }) => {
             </Grid2>
             <Grid2 size={{ xs: 12, sm: 6, md: 4 }}>
               <TimePicker
+                sx={{ width: 1 }}
                 onChange={(value) =>
                   setOpeningHoursState((currentState) => ({
                     ...currentState,

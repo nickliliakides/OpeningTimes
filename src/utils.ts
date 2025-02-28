@@ -13,3 +13,16 @@ export const lsMapper = (lsState: OpeningHoursStateType) => {
 
   return currentState;
 };
+
+export const validateInputs = (state: OpeningHoursStateType) => {
+  let isValid = true;
+  Object.values(state).forEach((value) => {
+    if (
+      value.displayTimes &&
+      (!dayjs(value.open).isValid() || !dayjs(value.close).isValid())
+    )
+      isValid = false;
+  });
+
+  return isValid;
+};

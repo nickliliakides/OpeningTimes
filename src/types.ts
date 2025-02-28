@@ -15,3 +15,5 @@ export type DayStateType = {
 };
 
 export type OpeningHoursStateType = { [key: string]: DayStateType };
+
+export type LsStateType = { createdAt: number; hours: OpeningHoursStateType }[];
